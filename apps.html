@@ -8,32 +8,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Blur Effect for Template Images */
-        .app-image-container {
+        /* Gradient Container for Apps */
+        .app-gradient-container {
             width: 100%;
-            height: 250px; /* Fix height taake cards barabar lagen */
+            height: 250px;
             border-radius: 12px;
-            overflow: hidden;
             margin-bottom: 1.5rem;
-            border: 1px solid var(--border-color);
             position: relative;
-            background: #000;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Dynamic gradient background */
+            background: linear-gradient(135deg, #0F172A 0%, #0284c7 100%);
+            transition: all 0.5s ease;
         }
 
-        .app-image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Image ko container mein fit karega */
-            object-position: top; /* Upar se crop karega taake app ka top UI dikhe */
-            filter: blur(8px); /* Shuru mein blur */
-            transform: scale(1.1); /* Blur ki wajah se kinaron par jo khaali jagah aati hai usko chupata hai */
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        /* VoiceForge specific gradient */
+        .app-gradient-container.voiceforge {
+            background: linear-gradient(135deg, #0F172A 0%, #84cc16 100%);
         }
 
-        /* Hover karne par clear ho jayegi */
-        .card:hover .app-image-container img {
-            filter: blur(0);
-            transform: scale(1);
+        /* Iconic AI specific gradient */
+        .app-gradient-container.iconicai {
+            background: linear-gradient(135deg, #0F172A 0%, #0284c7 100%);
+        }
+
+        /* Mouse move par gradient change (Hover Effect) */
+        .card:hover .app-gradient-container.voiceforge {
+            background: linear-gradient(135deg, #84cc16 0%, #0F172A 100%);
+            transform: scale(1.02);
+        }
+        .card:hover .app-gradient-container.iconicai {
+            background: linear-gradient(135deg, #0284c7 0%, #0F172A 100%);
+            transform: scale(1.02);
+        }
+
+        .app-gradient-container i {
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.2);
+            transition: all 0.5s ease;
+        }
+
+        .card:hover .app-gradient-container i {
+            color: rgba(255, 255, 255, 0.8);
+            transform: scale(1.1) rotate(10deg);
         }
     </style>
 </head>
@@ -62,11 +81,11 @@
         <p class="section-subtitle reveal">We are currently polishing these applications for the Google Play Store. Our focus is on clean UI/UX and powerful backend logic.</p>
         
         <div class="grid-container">
+            
             <!-- App 1: VoiceForge -->
             <div class="card reveal tilt">
-                <div class="app-image-container">
-                    <!-- Yahan assets folder se image aa rahi hai -->
-                  <img src="assets/voiceforge.webp" alt="VoiceForge App">
+                <div class="app-gradient-container voiceforge">
+                    <i class="fa-solid fa-wave-square"></i>
                 </div>
                 <h3>VoiceForge <span style="font-size: 0.8rem; background: var(--accent-green); color: #fff; padding: 4px 8px; border-radius: 4px;">In Development</span></h3>
                 <p style="margin-bottom: 1rem;">A powerful Text-to-Speech application that converts written text into high-quality voice models, with a focus on privacy and offline usage.</p>
@@ -75,23 +94,25 @@
             
             <!-- App 2: Iconic AI -->
             <div class="card reveal tilt">
-                <div class="app-image-container">
-                    <!-- Yahan assets folder se image aa rahi hai -->
-                 <img src="assets/iconicai.webp" alt="Iconic AI App">
+                <div class="app-gradient-container iconicai">
+                    <i class="fa-solid fa-microchip"></i>
                 </div>
                 <h3>Iconic AI <span style="font-size: 0.8rem; background: var(--accent-color); color: #fff; padding: 4px 8px; border-radius: 4px;">In Development</span></h3>
                 <p style="margin-bottom: 1rem;">An AI-powered personal assistant that helps users troubleshoot, compare, and learn about gadgets using the Gemini API.</p>
                 <p style="font-size: 0.85rem; color: var(--accent-color); font-weight: 600;">Tech: Kotlin, Gemini API, AI Chatbot</p>
             </div>
             
-            <!-- Naya App (Coming Soon) -->
+            <!-- App 3: New AI App -->
             <div class="card reveal tilt" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #F0F7FF; border: 1px dashed var(--accent-color);">
-                <div style="width: 80px; height: 80px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                    <i class="fa-solid fa-wand-magic-sparkles" style="font-size: 2rem; color: var(--accent-color);"></i>
+                <div class="app-gradient-container" style="background: transparent; border: 2px dashed var(--accent-color); height: 250px;">
+                    <div style="width: 80px; height: 80px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                        <i class="fa-solid fa-wand-magic-sparkles" style="font-size: 2rem; color: var(--accent-color);"></i>
+                    </div>
                 </div>
                 <h3>New AI App <span style="font-size: 0.8rem; background: #64748b; color: #fff; padding: 4px 8px; border-radius: 4px;">Coming Soon</span></h3>
                 <p style="margin-bottom: 1rem; color: var(--text-muted);">We are crafting a unique AI-powered application to solve everyday problems. Stay tuned for the big reveal.</p>
             </div>
+
         </div>
     </section>
 
