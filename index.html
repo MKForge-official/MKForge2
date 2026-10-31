@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MKForge | Where Ideas Become Software</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<button id="backToTop" class="back-to-top"><i class="fa-solid fa-arrow-up"></i></button>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="MKForge Logo" class="logo-img">
+            <div class="logo-text">
+                MKForge
+                <span class="logo-sub">Management Kernel Forge</span>
+            </div>
+        </a>
+        <div class="menu-btn"><i class="fa-solid fa-bars"></i></div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="apps.html">Apps</a></li>
+            <li><a href="design.html">Design</a></li>
+            <li><a href="students.html">For Students</a></li>
+            <li><a href="contact.html" class="btn-primary">Start a Project</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <span class="hero-badge reveal">Software • AI • Innovation</span>
+        <h1 class="reveal">Where Ideas Become <span>Software.</span></h1>
+        
+        <!-- Dynamic Quote -->
+        <div class="quote-container reveal" style="font-family: var(--font-heading); font-size: 1.3rem; color: var(--accent-color); font-weight: 600; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 8px; min-height: 35px;">
+            <span class="quote-icon" style="font-size: 1.8rem; opacity: 0.5; line-height: 0;">"</span>
+            <span id="dynamic-quote"></span>
+            <span class="type-cursor">|</span>
+            <span class="quote-icon" style="font-size: 1.8rem; opacity: 0.5; line-height: 0;">"</span>
+        </div>
+
+        <p class="reveal">We explore meaningful problems and turn ideas into practical digital solutions through software engineering, AI, and creativity.</p>
+        <div class="hero-buttons reveal">
+            <div class="trust-bar reveal" style="margin-top: 3rem; display: flex; gap: 2rem; font-size: 0.9rem; color: var(--text-muted);">
+    <span><i class="fa-solid fa-certificate" style="color: var(--accent-color);"></i> Certiport Python Specialist</span>
+    <span><i class="fa-solid fa-pen-nib" style="color: var(--accent-color);"></i> 5+ Years Design Experience</span>
+    <span><i class="fa-solid fa-graduation-cap" style="color: var(--accent-color);"></i> FUUAST Software Engineering</span>
+</div>
+            <a href="apps.html" class="btn-primary">Explore Our Apps</a>
+            <a href="contact.html" class="btn-secondary">Start a Project</a>
+        </div>
+    </section>
+
+    <!-- WHAT WE DO SECTION -->
+    <section style="min-height: auto; background: #F1ECE4;">
+        <h2 class="section-title reveal">What We Forge</h2>
+        <p class="section-subtitle reveal">Bridging the gap between artistic vision and technical execution.</p>
+        <div class="grid-container">
+            <a href="apps.html" class="card reveal">
+                <h3>Mobile & Web Apps <span class="card-arrow">→</span></h3>
+                <p>Custom Android and Web applications designed for real-world user needs and seamless experiences.</p>
+            </a>
+            <a href="design.html" class="card reveal">
+                <h3>Brand & UI/UX Design <span class="card-arrow">→</span></h3>
+                <p>Over 5 years of design experience. We craft logos, brand identities, and user interfaces that convert.</p>
+            </a>
+            <a href="students.html" class="card reveal">
+                <h3>Student Initiative <span class="card-arrow">→</span></h3>
+                <p>Have an idea? We help students turn their concepts into published applications with verified certificates.</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- PROCESS SECTION -->
+    <section style="min-height: auto; padding-top: 4rem;">
+        <h2 class="section-title reveal">How We Forge</h2>
+        <p class="section-subtitle reveal">Every idea goes through a rigorous process to become a polished product.</p>
+        
+        <div class="grid-container" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div class="card reveal" style="padding: 2rem; text-align: center; background: transparent; box-shadow: none; border: none;">
+                <h3 style="color: var(--accent-color); font-size: 2rem; margin-bottom: 0.5rem; justify-content: center;">01</h3>
+                <h4 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text-main);">Spark</h4>
+                <p style="font-size: 0.9rem;">We listen to your idea and identify the real-world problem.</p>
+            </div>
+            <div class="card reveal" style="padding: 2rem; text-align: center; background: transparent; box-shadow: none; border: none;">
+                <h3 style="color: var(--accent-color); font-size: 2rem; margin-bottom: 0.5rem; justify-content: center;">02</h3>
+                <h4 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text-main);">Blueprint</h4>
+                <p style="font-size: 0.9rem;">We design the UI/UX and plan the technical architecture.</p>
+            </div>
+            <div class="card reveal" style="padding: 2rem; text-align: center; background: transparent; box-shadow: none; border: none;">
+                <h3 style="color: var(--accent-color); font-size: 2rem; margin-bottom: 0.5rem; justify-content: center;">03</h3>
+                <h4 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text-main);">Forge</h4>
+                <p style="font-size: 0.9rem;">We write the code, build the app, and test every feature.</p>
+            </div>
+            <div class="card reveal" style="padding: 2rem; text-align: center; background: transparent; box-shadow: none; border: none;">
+                <h3 style="color: var(--accent-color); font-size: 2rem; margin-bottom: 0.5rem; justify-content: center;">04</h3>
+                <h4 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text-main);">Ship</h4>
+                <p style="font-size: 0.9rem;">We publish to the Play Store and hand over the verified product.</p>
+            </div>
+        </div>
+    </section>
+        <!-- STUDENT AD BANNER -->
+    <section style="min-height: auto; padding: 2rem 8%;">
+        <div class="reveal" style="background: var(--primary-color); border-radius: 20px; padding: 4rem; text-align: center; color: #fff; box-shadow: 0 20px 50px rgba(15, 23, 42, 0.2);">
+            <span style="color: var(--accent-green); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem; display: block; margin-bottom: 1rem;">Attention Students & Creators</span>
+            <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 1rem; color: #fff;">Have an Idea or an App to Sell?</h2>
+            <p style="color: #94a3b8; font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem;">Whether you want to sell your app, showcase your project, or pitch a new idea, we want to hear from you. Fill the form and we'll review it.</p>
+            <a href="contact.html" class="btn-primary" style="background: var(--accent-green); border-color: var(--accent-green); color: #fff !important; padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 700;">Fill the Form Now <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h4>MKForge</h4>
+                <p style="color: #94a3b8; font-size: 0.9rem;">Management Kernel Forge.<br>Where ideas become software.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="apps.html">Apps</a></li>
+                    <li><a href="design.html">Design</a></li>
+                    <li><a href="students.html">For Students</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:murtaza.21raza@gmail.com">murtaza.21raza@gmail.com</a></li>
+                    <li><a href="https://www.linkedin.com/in/murtaza-tech" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2026 MKForge. All rights reserved. | <a href="privacy.html" style="color: #64748b;">Privacy Policy</a> | <a href="terms.html" style="color: #64748b;">Terms of Service</a></p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <!-- APP MARQUEE -->
+<div class="marquee-container reveal">
+    <div class="marquee-content">
+        <span><i class="fa-solid fa-bolt"></i> VoiceForge</span>
+        <span><i class="fa-solid fa-microchip"></i> Iconic AI</span>
+        <span><i class="fa-solid fa-file-lines"></i> Formal AI</span>
+        <span><i class="fa-solid fa-palette"></i> Brand Design</span>
+        <span><i class="fa-solid fa-code"></i> Web Apps</span>
+        <!-- Duplicate for infinite loop -->
+        <span><i class="fa-solid fa-bolt"></i> VoiceForge</span>
+        <span><i class="fa-solid fa-microchip"></i> Iconic AI</span>
+        <span><i class="fa-solid fa-file-lines"></i> Formal AI</span>
+        <span><i class="fa-solid fa-palette"></i> Brand Design</span>
+        <span><i class="fa-solid fa-code"></i> Web Apps</span>
+    </div>
+</div>
+</body>
+</html>
