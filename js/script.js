@@ -1,4 +1,6 @@
-// 1. Custom Cursor
+// ==========================================
+// 1. CUSTOM CURSOR
+// ==========================================
 const cursor = document.querySelector('.cursor');
 const follower = document.querySelector('.cursor-follower');
 
@@ -25,7 +27,9 @@ if (cursor && follower) {
     });
 }
 
-// 2. Mobile Menu Toggle
+// ==========================================
+// 2. MOBILE MENU TOGGLE
+// ==========================================
 const menuBtn = document.querySelector('.menu-btn');
 const navLinks = document.querySelector('.nav-links');
 
@@ -36,7 +40,9 @@ if(menuBtn && navLinks) {
     });
 }
 
-// 3. Scroll Reveal Animation
+// ==========================================
+// 3. SCROLL REVEAL ANIMATION
+// ==========================================
 function reveal() {
     var reveals = document.querySelectorAll(".reveal");
     for (var i = 0; i < reveals.length; i++) {
@@ -51,7 +57,9 @@ function reveal() {
 window.addEventListener("scroll", reveal);
 document.addEventListener("DOMContentLoaded", reveal);
 
-// 4. Dynamic Quotes Typing Effect
+// ==========================================
+// 4. DYNAMIC QUOTES TYPING EFFECT
+// ==========================================
 const quotes = [
     "Idea: The power of thought.",
     "Imagination meets execution.",
@@ -96,37 +104,38 @@ document.addEventListener("DOMContentLoaded", function() {
         setTimeout(typeQuote, 1000);
     }
 });
-// 5. 3D Tilt Effect for Cards
-const tiltCards = document.querySelectorAll('.tilt');
-tiltCards.forEach(card => {
+
+// ==========================================
+// 5. 3D TILT EFFECT FOR CARDS
+// ==========================================
+const cards = document.querySelectorAll('.tilt');
+
+cards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
+        
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
+        
         const rotateX = ((y - centerY) / centerY) * -5; 
         const rotateY = ((x - centerX) / centerX) * 5;
+        
         card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
     });
+    
     card.addEventListener('mouseleave', () => {
         card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) translateY(0)`;
     });
 });
-const backToTopBtn = document.getElementById("backToTop");
-if (backToTopBtn) {
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) {
-            backToTopBtn.classList.add("show");
-        } else {
-            backToTopBtn.classList.remove("show");
-        }
-    });
-    backToTopBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-}
-// 6. Contact Form Submission (Cloudflare Integration)
+
+// ==========================================
+// 6. CONTACT FORM SUBMISSION (Google Apps Script)
+// ==========================================
+// Yeh woh URL hai jo aapne Google Script se copy kiya tha
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzeTzc5az0jZx4cLnnHVCBzZPcgABCzmyHQ2QLOc0EH6y5ZaO9hGMqj5SDHoR212IpK5g/exec";
+
 const contactForm = document.getElementById('contactForm');
 const formStatus = document.getElementById('formStatus');
 
@@ -136,11 +145,8 @@ if (contactForm) {
         
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+        submitBtn.innerHTML = 'Sending...';
         submitBtn.disabled = true;
-
-        // Yahan Cloudflare Worker ka URL aayega (Jab aap worker deploy karenge)
-        const CLOUDFLARE_WORKER_URL = "https://YOUR_WORKER_NAME.YOUR_SUBDOMAIN.workers.dev";
 
         const formData = {
             name: document.getElementById('name').value,
@@ -150,20 +156,31 @@ if (contactForm) {
         };
 
         try {
-            // Agar aapne Worker deploy kar diya hai, toh yeh real request karega
-            // Filhal ke liye hum fake delay laga rahe hain (taake UI test ho sake)
-            await new Promise(resolve => setTimeout(resolve, 1500));
+            // Data Google Script par bhejna
+            await fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain', // Google Script ke liye text/plain zaroori hai
+                },
+                body: JSON.stringify(formData)
+            });
 
+            // Success Message
             formStatus.style.display = 'block';
             formStatus.style.color = 'var(--accent-green)';
-            formStatus.textContent = "Thank you! We are reviewing your request. We will contact you soon.";
+            formStatus.textContent = "Thank you! Your message has been sent. We will contact you soon.";
             
+            // Form Reset
             contactForm.reset();
+            
         } catch (error) {
+            // Error Message
             formStatus.style.display = 'block';
             formStatus.style.color = 'red';
             formStatus.textContent = "Something went wrong. Please try again.";
+            
         } finally {
+            // Button Reset
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
         }
