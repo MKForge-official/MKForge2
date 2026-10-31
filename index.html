@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<button id="backToTop" class="back-to-top"><i class="fa-solid fa-arrow-up"></i></button>
 <body>
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
@@ -28,6 +27,7 @@
             <li><a href="apps.html">Apps</a></li>
             <li><a href="design.html">Design</a></li>
             <li><a href="students.html">For Students</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="contact.html" class="btn-primary">Start a Project</a></li>
         </ul>
     </nav>
@@ -39,23 +39,40 @@
         
         <!-- Dynamic Quote -->
         <div class="quote-container reveal" style="font-family: var(--font-heading); font-size: 1.3rem; color: var(--accent-color); font-weight: 600; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 8px; min-height: 35px;">
-            <span class="quote-icon" style="font-size: 1.8rem; opacity: 0.5; line-height: 0;">"</span>
             <span id="dynamic-quote"></span>
-            <span class="type-cursor"></span>
-            <span class="quote-icon" style="font-size: 1.8rem; opacity: 0.5; line-height: 0;">"</span>
+            <span class="type-cursor" style="color: var(--accent-color); font-weight: 300; animation: blink 1s infinite;">|</span>
         </div>
 
         <p class="reveal">We explore meaningful problems and turn ideas into practical digital solutions through software engineering, AI, and creativity.</p>
+        
         <div class="hero-buttons reveal">
-            <div class="trust-bar reveal" style="margin-top: 3rem; display: flex; gap: 2rem; font-size: 0.9rem; color: var(--text-muted);">
-    <span><i class="fa-solid fa-certificate" style="color: var(--accent-color);"></i> Certiport Python Specialist</span>
-    <span><i class="fa-solid fa-pen-nib" style="color: var(--accent-color);"></i> 5+ Years Design Experience</span>
-    <span><i class="fa-solid fa-graduation-cap" style="color: var(--accent-color);"></i> FUUAST Software Engineering</span>
-</div>
             <a href="apps.html" class="btn-primary">Explore Our Apps</a>
             <a href="contact.html" class="btn-secondary">Start a Project</a>
         </div>
+
+        <!-- TRUST BAR (Yeh buttons ke baad aayega) -->
+        <div class="trust-bar reveal" style="margin-top: 3rem; display: flex; gap: 2rem; font-size: 0.9rem; color: var(--text-muted); flex-wrap: wrap;">
+            <span><i class="fa-solid fa-certificate" style="color: var(--accent-color);"></i> Certiport Python Specialist</span>
+            <span><i class="fa-solid fa-pen-nib" style="color: var(--accent-color);"></i> 5+ Years Design Experience</span>
+            <span><i class="fa-solid fa-graduation-cap" style="color: var(--accent-color);"></i> FUUAST Software Engineering</span>
+        </div>
     </section>
+
+    <!-- APP MARQUEE -->
+    <div class="marquee-container reveal">
+        <div class="marquee-content">
+            <span><i class="fa-solid fa-bolt"></i> VoiceForge</span>
+            <span><i class="fa-solid fa-microchip"></i> Iconic AI</span>
+            <span><i class="fa-solid fa-file-lines"></i> Formal AI</span>
+            <span><i class="fa-solid fa-palette"></i> Brand Design</span>
+            <span><i class="fa-solid fa-code"></i> Web Apps</span>
+            <span><i class="fa-solid fa-bolt"></i> VoiceForge</span>
+            <span><i class="fa-solid fa-microchip"></i> Iconic AI</span>
+            <span><i class="fa-solid fa-file-lines"></i> Formal AI</span>
+            <span><i class="fa-solid fa-palette"></i> Brand Design</span>
+            <span><i class="fa-solid fa-code"></i> Web Apps</span>
+        </div>
+    </div>
 
     <!-- WHAT WE DO SECTION -->
     <section style="min-height: auto; background: #F1ECE4;">
@@ -105,7 +122,8 @@
             </div>
         </div>
     </section>
-        <!-- STUDENT AD BANNER -->
+
+    <!-- STUDENT AD BANNER -->
     <section style="min-height: auto; padding: 2rem 8%;">
         <div class="reveal" style="background: var(--primary-color); border-radius: 20px; padding: 4rem; text-align: center; color: #fff; box-shadow: 0 20px 50px rgba(15, 23, 42, 0.2);">
             <span style="color: var(--accent-green); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem; display: block; margin-bottom: 1rem;">Attention Students & Creators</span>
@@ -129,6 +147,7 @@
                     <li><a href="apps.html">Apps</a></li>
                     <li><a href="design.html">Design</a></li>
                     <li><a href="students.html">For Students</a></li>
+                    <li><a href="about.html">About</a></li>
                 </ul>
             </div>
             <div>
@@ -142,22 +161,8 @@
         <p class="copyright">&copy; 2026 MKForge. All rights reserved. | <a href="privacy.html" style="color: #64748b;">Privacy Policy</a> | <a href="terms.html" style="color: #64748b;">Terms of Service</a></p>
     </footer>
 
+    <button id="backToTop" class="back-to-top"><i class="fa-solid fa-arrow-up"></i></button>
+
     <script src="js/script.js"></script>
-    <!-- APP MARQUEE -->
-<div class="marquee-container reveal">
-    <div class="marquee-content">
-        <span><i class="fa-solid fa-bolt"></i> VoiceForge</span>
-        <span><i class="fa-solid fa-microchip"></i> Iconic AI</span>
-        <span><i class="fa-solid fa-file-lines"></i> Formal AI</span>
-        <span><i class="fa-solid fa-palette"></i> Brand Design</span>
-        <span><i class="fa-solid fa-code"></i> Web Apps</span>
-        <!-- Duplicate for infinite loop -->
-        <span><i class="fa-solid fa-bolt"></i> VoiceForge</span>
-        <span><i class="fa-solid fa-microchip"></i> Iconic AI</span>
-        <span><i class="fa-solid fa-file-lines"></i> Formal AI</span>
-        <span><i class="fa-solid fa-palette"></i> Brand Design</span>
-        <span><i class="fa-solid fa-code"></i> Web Apps</span>
-    </div>
-</div>
 </body>
 </html>
