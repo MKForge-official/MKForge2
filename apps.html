@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Gradient Container for Apps */
+        /* Base Gradient Container */
         .app-gradient-container {
             width: 100%;
             height: 250px;
@@ -19,22 +19,25 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            /* Dynamic gradient background */
-            background: linear-gradient(135deg, #0F172A 0%, #0284c7 100%);
             transition: all 0.5s ease;
         }
 
-        /* VoiceForge specific gradient */
+        /* VoiceForge Gradient */
         .app-gradient-container.voiceforge {
             background: linear-gradient(135deg, #0F172A 0%, #84cc16 100%);
         }
 
-        /* Iconic AI specific gradient */
+        /* Iconic AI Gradient */
         .app-gradient-container.iconicai {
             background: linear-gradient(135deg, #0F172A 0%, #0284c7 100%);
         }
 
-        /* Mouse move par gradient change (Hover Effect) */
+        /* New AI App (Coming Soon) Gradient */
+        .app-gradient-container.comingsoon {
+            background: linear-gradient(135deg, #4c1d95 0%, #0284c7 100%); /* Purple to Blue */
+        }
+
+        /* Hover Animations */
         .card:hover .app-gradient-container.voiceforge {
             background: linear-gradient(135deg, #84cc16 0%, #0F172A 100%);
             transform: scale(1.02);
@@ -43,15 +46,20 @@
             background: linear-gradient(135deg, #0284c7 0%, #0F172A 100%);
             transform: scale(1.02);
         }
+        .card:hover .app-gradient-container.comingsoon {
+            background: linear-gradient(135deg, #0284c7 0%, #4c1d95 100%);
+            transform: scale(1.02);
+        }
 
+        /* Icon Inside Gradient */
         .app-gradient-container i {
             font-size: 4rem;
-            color: rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.3);
             transition: all 0.5s ease;
         }
 
         .card:hover .app-gradient-container i {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.9);
             transform: scale(1.1) rotate(10deg);
         }
     </style>
@@ -102,15 +110,14 @@
                 <p style="font-size: 0.85rem; color: var(--accent-color); font-weight: 600;">Tech: Kotlin, Gemini API, AI Chatbot</p>
             </div>
             
-            <!-- App 3: New AI App -->
-            <div class="card reveal tilt" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #F0F7FF; border: 1px dashed var(--accent-color);">
-                <div class="app-gradient-container" style="background: transparent; border: 2px dashed var(--accent-color); height: 250px;">
-                    <div style="width: 80px; height: 80px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                        <i class="fa-solid fa-wand-magic-sparkles" style="font-size: 2rem; color: var(--accent-color);"></i>
-                    </div>
+            <!-- App 3: New AI App (Coming Soon) -->
+            <div class="card reveal tilt">
+                <div class="app-gradient-container comingsoon">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
                 </div>
                 <h3>New AI App <span style="font-size: 0.8rem; background: #64748b; color: #fff; padding: 4px 8px; border-radius: 4px;">Coming Soon</span></h3>
-                <p style="margin-bottom: 1rem; color: var(--text-muted);">We are crafting a unique AI-powered application to solve everyday problems. Stay tuned for the big reveal.</p>
+                <p style="margin-bottom: 1rem;">We are crafting a unique AI-powered application to solve everyday problems. Stay tuned for the big reveal.</p>
+                <p style="font-size: 0.85rem; color: var(--accent-color); font-weight: 600;">Tech: Kotlin, AI Integration</p>
             </div>
 
         </div>
